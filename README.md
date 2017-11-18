@@ -1,4 +1,4 @@
-# Gareth and Muraz's Final Project  
+# Gareth and Meraz's Final Project  
 
 ### Idea
 
