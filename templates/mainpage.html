@@ -19,10 +19,17 @@
       <button class="pure-button" name="S">
           Scissors
       </button>
-      <input type="submit" name="submit" value="Do Something">
-      </input>
-      <input type="submit" name="submit" value="Do Something Else">
-      </input>
+    </div>
+    <div>
+      <form class="pure-form" action="" method="POST">
+        <legend>Enter one of the above below!</legend> <input name="choice" type="text" value=""/>
+        <br/>
+        <input class="pure-button pure-button primary" type="submit" name="Go!"></input>
+      </form>
+    </div>
+    <div>
+      You chose: {{choice}}
+      <br/>
     </div>
   </body>
 </html>

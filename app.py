@@ -4,9 +4,11 @@ app = Flask(__name__)
 @app.route('/', methods=['POST', 'GET'])
 def main():
     # Initialization
+    if request.method == 'GET':
+        return render_template('mainpage.html')
     # Input
-    if ("R" or "S" or "P" or "Do Something") in request.form:
-        print("Success")
-    return render_template('mainpage.html')
+    if request.method == 'POST':
+        choice = request.form['choice']
+        return render_template('mainpage.html',choice = choice)
 
 app.run(debug=True,host='0.0.0.0',port=5000)
