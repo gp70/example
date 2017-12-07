@@ -10,7 +10,8 @@ def main():
     # Input
     if request.method == 'POST':
         choice = request.form['choice']
-        winner = rps.refine(choice)
+        weight = request.form['weight']
+        winner = rps.refine(choice,weight)
         return render_template('mainpage.html', choice = choice, winner = winner)
 
 app.run(debug=True,host='0.0.0.0',port=5000)

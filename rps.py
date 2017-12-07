@@ -1,23 +1,21 @@
 import random
 
-weights = {'Normal Weights':('R','P','S'),
-           'Rock Focused':('R','R','P','S'),
-           'Paper Focused':('R','P','P','S'),
-           'Scissors Focused':('R','P','S','S')}
-p_count = 0
-c_count = 0
-
-def refine(p):
-    weights = {'Normal Weights':('R','P','S'),
-               'Rock Focused':('R','R','P','S'),
-               'Paper Focused':('R','P','P','S'),
-               'Scissors Focused':('R','P','S','S')}
-    if p == 'Rock':
-        return decision('R',random.choice(weights['Normal Weights']))
-    if p == 'Paper':
-        return decision('P',random.choice(weights['Normal Weights']))
-    if p == 'Scissors':
-        return decision('S',random.choice(weights['Normal Weights']))
+def refine(p,w):
+    weights = {'normal weights':('R','P','S'),
+               'rock focused':('R','R','P','S'),
+               'paper focused':('R','P','P','S'),
+               'scissors focused':('R','P','S','S')}
+    wlist = []
+    for key in weights:
+        wlist.append(key)
+    if w.lower() not in wlist:
+        w = 'Normal Weights'
+    if p.lower() == 'rock':
+        return decision('R',random.choice(weights[w.lower()]))
+    if p.lower() == 'paper':
+        return decision('P',random.choice(weights[w.lower()]))
+    if p.lower() == 'scissors':
+        return decision('S',random.choice(weights[w.lower()]))
     return 'Type \"Rock,\" \"Paper,\" or \"Scissors,\" please! Nobody'
 
 def decision(p,c):

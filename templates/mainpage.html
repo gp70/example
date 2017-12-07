@@ -9,22 +9,15 @@
       <div class="pure-u-1-6"><p></p></div>
       <div class='pure-u-1-2'>
     <h1>Rock, Paper, Scissors</h1>
-    <div class="pure-button-group" role="group" aria-label="...">
-      <button class="pure-button" name="R">
-          Rock
-      </button>
-      <button class="pure-button" name="P">
-          Paper
-      </button>
-      <button class="pure-button" name="S">
-          Scissors
-      </button>
-    </div>
     <div>
       <form class="pure-form" action="" method="POST">
-        <legend>Enter one of the above below!</legend> <input name="choice" type="text" value=""/>
+        <legend>Enter Rock, Paper, or Scissors below!</legend> <input name="choice" type="text" value=""/>
         <br/>
-        <input class="pure-button pure-button primary" type="submit" name="Go!"></input>
+        <legend>Enter a weighting style; defaults to choosing equally</legend> <input name="weight" type="text" value=""/>
+        <br/>
+        Options: Rock Focused, Paper Focused, Scissors Focused
+        <br/>
+        <input class="pure-button pure-button primary" type="submit" name="submit"></input>
       </form>
     </div>
     <div>
