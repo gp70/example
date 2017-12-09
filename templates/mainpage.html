@@ -3,6 +3,7 @@
     <!
     <link rel='stylesheet' type='text/css' href='/static/style.css'>
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" 				 			  	   integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" 			       	   crossorigin="anonymous">
+    <title>Rock, Paper, Scissors!</title>
   </head>
   <body background="../static/Pinot Noir.jpg">
     <div class="pure-g">
@@ -15,16 +16,45 @@
         <br/>
         <legend>Enter a weighting style; defaults to choosing equally</legend> <input name="weight" type="text" value=""/>
         <br/>
-        Options: Rock Focused, Paper Focused, Scissors Focused
-        <br/>
+	<br/>
+        <small>Options: Rock Focused, Paper Focused, Scissors Focused, Realistic</small>
+	<br/>
+	<br/>
+	<br/>
         <input class="pure-button pure-button primary" type="submit" name="submit"></input>
       </form>
     </div>
     <div>
       You chose: {{choice}}
       <br/>
+      The computer chose: {{cchoice}}
+      <br/>
       {{winner}} won!
       <br/>
     </div>
+    <h2>Stats</h2>
+      <legend>Player</legend>
+      <hr align="left">
+      Wins: {{pwcount}}
+      <br/>
+      Rocks Thrown: {{prcount}}
+      <br/>
+      Papers Thrown: {{ppcount}}
+      <br/>
+      Scissors Thrown: {{pscount}}
+      <br/>
+      <br/>
+      <legend>Computer</legend>
+      <hr align="left">
+      Wins: {{cwcount}}
+      <br/>
+      Rocks Thrown: {{crcount}}
+      <br/>
+      Papers Thrown: {{cpcount}}
+      <br/>
+      Scissors Thrown: {{cscount}}
+      <br/>
+      <br/>
+      Ties: {{tcount}}
   </body>
 </html>
