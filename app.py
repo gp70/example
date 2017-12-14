@@ -63,6 +63,17 @@ def main():
                                                 crcount = crcount, cpcount = cpcount,
                                                 cscount = cscount, pwcount = pwcount,
                                                 cwcount = cwcount, tcount = tcount)
+@app.route('/playerinfoandstats', methods=['POST', 'GET'])
+
+def Player_info():
+    global pwcount, cwcount, tcount, prcount, ppcount, pscount, crcount, cpcount, cscount
+    if request.method == 'POST':
+        name=request.form['Name']
+        age=request.form['Age']
+        gender=request.form.get('gender')
+        return render_template('Main.html',name=name, age=age, gender=gender)
+    if request.method=='GET':
+        return render_template('Main.html')
     
 
 app.run(debug=True,host='0.0.0.0',port=5000)
