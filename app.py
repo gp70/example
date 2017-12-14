@@ -64,15 +64,5 @@ def main():
                                                 cscount = cscount, pwcount = pwcount,
                                                 cwcount = cwcount, tcount = tcount)
     
-@app.route('/stats')
-def stats():
-    
-    global pwcount,cwcount,tcount,prcount,ppcount,pscount,crcount,cpcount,cscount
-    
-    return render_template('stats.html', prcount = prcount, ppcount = ppcount,
-                                         pscount = pscount, crcount = crcount,
-                                         cpcount = cpcount, cscount = cscount,
-                                         pwcount = pwcount, cwcount = cwcount,
-                                         tcount = tcount)
 
 app.run(debug=True,host='0.0.0.0',port=5000)
