@@ -11,6 +11,7 @@
       <div class='pure-u-1-2'>
     <h1>Rock, Paper, Scissors</h1>
     <div>
+      <h2>First, enter your info <a href="http://localhost:5000/playerinfo">here</a></h2>
       <form class="pure-form" action="" method="POST">
         <legend>Enter Rock, Paper, or Scissors below!</legend> <input name="choice" type="text" value=""/>
         <br/>
@@ -25,7 +26,7 @@
       </form>
     </div>
     <div>
-      You chose: {{choice}}
+      {{name}} chose: {{choice}}
       <br/>
       The computer chose: {{cchoice}}
       <br/>
@@ -35,7 +36,7 @@
       <br/>
     </div>
     <h2>Stats</h2>
-      <legend>Player</legend>
+      <legend>{{name}} | Age: {{age}} | Gender: {{gender}}</legend>
       <hr align="left">
       Wins: {{pwcount}}
       <br/>

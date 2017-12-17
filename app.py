@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for
 import rps
 app = Flask(__name__)
 
@@ -15,14 +15,18 @@ crcount = 0
 cpcount = 0
 cscount = 0
 
+name = ''
+age = ''
+gender = ''
+
 @app.route('/', methods=['POST', 'GET'])
 def main():
     # Initialization
     
-    global pwcount,cwcount,tcount,prcount,ppcount,pscount,crcount,cpcount,cscount
+    global pwcount,cwcount,tcount,prcount,ppcount,pscount,crcount,cpcount,cscount,name,age,gender
     
     if request.method == 'GET':
-        return render_template('mainpage.html')
+        return render_template('mainpage.html',name = name, age = age, gender = gender)
     
     # Input
     
@@ -57,21 +61,32 @@ def main():
         if winner[1].lower() == 'scissors':
             cscount += 1
             
+        if winner[0] == 'Player':
+            winplayer = name
+        if winner[0] != 'Player':
+            winplayer = winner[0]
+            
         return render_template('mainpage.html', choice = choice, cchoice = winner[1],
-                                                winner = winner[0], prcount = prcount,
+                                                winner = winplayer, prcount = prcount,
                                                 ppcount = ppcount, pscount = pscount,
                                                 crcount = crcount, cpcount = cpcount,
                                                 cscount = cscount, pwcount = pwcount,
-                                                cwcount = cwcount, tcount = tcount)
-@app.route('/playerinfoandstats', methods=['POST', 'GET'])
+                                                cwcount = cwcount, tcount = tcount,
+                                                name = name, age = age, gender = gender)
+@app.route('/playerinfo', methods=['POST', 'GET'])
 
 def Player_info():
-    global pwcount, cwcount, tcount, prcount, ppcount, pscount, crcount, cpcount, cscount
+    
+    global pwcount, cwcount, tcount, prcount, ppcount, pscount, crcount, cpcount, cscount, name, age, gender
+    
     if request.method == 'POST':
-        name=request.form['Name']
-        age=request.form['Age']
-        gender=request.form.get('gender')
-        return render_template('Main.html',name=name, age=age, gender=gender)
+        
+        name = request.form['Name']
+        age = request.form['Age']
+        gender = request.form.get('gender')
+        
+        return redirect(url_for('main'))
+    
     if request.method=='GET':
         return render_template('Main.html')
     
