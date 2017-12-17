@@ -25,8 +25,5 @@ Run 'app.py,' then put "localhost:5000" into the address bar of a browser
     * *.jpg
   * templates
     * *.html
-  * amcharts
-  * js
-    * *.html
   * .gitignore
   * README.md
