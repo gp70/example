@@ -1,3 +1,4 @@
+Note: Work was shared about equally during the creation of this project, over all aspects.
 # Gareth and Meraz's Final Project  
 
 ### Idea
@@ -6,7 +7,7 @@ Our goal is to make a rock-paper-scissors game, using Flask to make it playable 
 
 ### Usage
 
-Run 'app.py,' then put "localhost:5000" into the address bar of a browser
+Run 'app.py' by installing Flask (flask.pocoo.org) and typing "FLASK_APP=app.py flask run" into the terminal, then put "localhost:5000" into the address bar of a browser.
 
 ### Structure 
 * Flask
